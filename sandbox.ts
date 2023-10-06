@@ -13,5 +13,3 @@
 // arrays
 
 let names = ["benson", "njuguna", "kamau"];
-
-names.push(2)

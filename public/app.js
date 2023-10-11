@@ -21,7 +21,8 @@ const display = (invoices) => {
         const amount = document.createElement('span');
         name.textContent = inv.client;
         amount.textContent = `${inv.amount}`;
-        li.textContent = inv.client;
+        li.appendChild(name);
+        li.appendChild(amount);
         itemList === null || itemList === void 0 ? void 0 : itemList.appendChild(li);
     });
 };

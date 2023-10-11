@@ -27,7 +27,8 @@ const display = (invoices: Invoice[]) => {
     name.textContent = inv.client
     amount.textContent = `${inv.amount}`
 
-    li.textContent = inv.client
+    li.appendChild(name)
+    li.appendChild(amount)
     itemList?.appendChild(li);
   })
 }

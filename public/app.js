@@ -12,9 +12,9 @@ form.addEventListener("submit", (e) => {
         const inv = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
         invoices.push(inv);
     }
-    display(invoices);
+    displayInvoices(invoices);
 });
-const display = (invoices) => {
+const displayInvoices = (invoices) => {
     invoices.map((inv) => {
         const li = document.createElement('li');
         const name = document.createElement("span");

@@ -1,6 +1,6 @@
 export class Payment {
   constructor(
-    client: string,
+    readonly client: string,
     private details: string,
     public amount: number
   ) {}

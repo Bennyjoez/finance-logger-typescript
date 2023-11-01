@@ -20,9 +20,9 @@ form.addEventListener("submit", (e: Event) => {
     displayInvoices(invoices)
   } else if(type.value == "payment") {
     const payment = new Payment(toFrom.value, details.value, amount.valueAsNumber)
-    payments.push(payment)
-    displayPayments(payments)
-}
+    // payments.push(payment)
+    displayPayment(payment)
+  }
 })
 
 const displayInvoices = (invoices: Invoice[]) => {
@@ -37,4 +37,16 @@ const displayInvoices = (invoices: Invoice[]) => {
     li.appendChild(amount)
     itemList?.appendChild(li);
   })
+}
+
+const displayPayment = (payment: Payment) => {
+  const li = document.createElement('li');
+  const name = document.createElement("span")
+  const amount = document.createElement('span')
+  name.textContent = payment.client
+  amount.textContent = `${payment.amount}`
+
+  li.appendChild(name)
+  li.appendChild(amount)
+  itemList?.appendChild(li);
 }

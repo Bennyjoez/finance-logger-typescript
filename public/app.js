@@ -17,8 +17,8 @@ form.addEventListener("submit", (e) => {
     }
     else if (type.value == "payment") {
         const payment = new Payment(toFrom.value, details.value, amount.valueAsNumber);
-        payments.push(payment);
-        displayPayments(payments);
+        // payments.push(payment)
+        displayPayment(payment);
     }
 });
 const displayInvoices = (invoices) => {
@@ -32,4 +32,14 @@ const displayInvoices = (invoices) => {
         li.appendChild(amount);
         itemList === null || itemList === void 0 ? void 0 : itemList.appendChild(li);
     });
+};
+const displayPayment = (payment) => {
+    const li = document.createElement('li');
+    const name = document.createElement("span");
+    const amount = document.createElement('span');
+    name.textContent = payment.client;
+    amount.textContent = `${payment.amount}`;
+    li.appendChild(name);
+    li.appendChild(amount);
+    itemList === null || itemList === void 0 ? void 0 : itemList.appendChild(li);
 };

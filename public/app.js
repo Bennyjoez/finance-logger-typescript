@@ -10,29 +10,19 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     if (type.value == "invoice") {
         const inv = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
-        displayInvoices(inv);
+        displayItem(inv);
     }
     else if (type.value == "payment") {
         const payment = new Payment(toFrom.value, details.value, amount.valueAsNumber);
-        displayPayment(payment);
+        displayItem(payment);
     }
 });
-const displayInvoices = (inv) => {
+const displayItem = (item) => {
     const li = document.createElement('li');
     const name = document.createElement("span");
     const amount = document.createElement('span');
-    name.textContent = inv.client;
-    amount.textContent = `${inv.amount}`;
-    li.appendChild(name);
-    li.appendChild(amount);
-    itemList === null || itemList === void 0 ? void 0 : itemList.appendChild(li);
-};
-const displayPayment = (payment) => {
-    const li = document.createElement('li');
-    const name = document.createElement("span");
-    const amount = document.createElement('span');
-    name.textContent = payment.client;
-    amount.textContent = `${payment.amount}`;
+    name.textContent = item.client;
+    amount.textContent = `${item.amount}`;
     li.appendChild(name);
     li.appendChild(amount);
     itemList === null || itemList === void 0 ? void 0 : itemList.appendChild(li);

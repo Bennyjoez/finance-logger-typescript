@@ -1,4 +1,4 @@
-export class Payments {
+export class Payment {
   constructor(
     client: string,
     private details: string,
